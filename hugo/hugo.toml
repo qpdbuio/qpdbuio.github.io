@@ -1,0 +1,5 @@
+baseURL = 'https://lovetui.com/'
+languageCode = 'en-us'
+title = 'TUI LOVE'
+theme = 'ace-documentation'
+publishDir = "../"
