@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html><head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <meta name="description" content="_index.md">
+    
+    <link rel="alternate" type="application/rss+xml" href="https://lovetui.com/mysql/mysql-install-master-and-slave/index.xml" title="TUI LOVE" />
+    <link rel="canonical" href="https://lovetui.com/mysql/mysql-install-master-and-slave.html">
+
+    <title>
+        
+        MySQL主从 | TUI LOVE
+        
+    </title>
+
+    
+    <link href="https://lovetui.com/css/fontawesome.min.css" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://lovetui.com/css/ace.min.css">
+
+    
+
+    
+    
+        
+    
+
+</head>
+<body><nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top" id="navbarMain">
+    <div class="container">
+        <div>
+            <a class="navbar-brand" href="/">
+                
+                TUI LOVE
+            </a>
+        </div>
+        
+    </div>
+    <div class="feed-icons">
+            <a href="https://lovetui.com/mysql/mysql-install-master-and-slave/index.xml"><img src="/img/feed-icon.svg" alt="RSS feed" /></a>
+        </div>
+    </nav>
+<div class="container-fluid">
+            <div class="row">
+
+                <div class="docs-sidenav order-0 col-12 col-md-3 col-lg-2 col-xl-2 position-sticky border-right"><nav class="navbar navbar-expand-md navbar-light pl-0">
+    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#sidenav-left-collapse" aria-controls="sidenav-left-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+     <div class="collapse navbar-collapse align-items-start flex-column" id="sidenav-left-collapse">
+            <form class="form-inline my-2 my-lg-0 searchbox">
+                <input class="form-control mr-sm-2 w-100" data-search-input id="search-by" type="text" placeholder="Search">
+            </form>
+
+        
+
+         <ul class="navbar-nav flex-column pt-3">
+    <li data-nav-id="/start.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/start.html"><h6>Start</h6></a>
+        
+    </li>
+    <li data-nav-id="/linux.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux.html"><h6>Linux</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/linux/fonts.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux/fonts.html"><h6>使用yum安装字体库</h6></a>
+        
+    </li>
+    <li data-nav-id="/linux/iptables.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux/iptables.html"><h6>iptables</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/linux/iptables/iptables-forward.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux/iptables/iptables-forward.html"><h6>使用iptables实现转发</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/mysql.html" class="nav-item my-1 parent haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/mysql.html"><h6>MySQL</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/mysql/mysql-install-master-and-slave.html" class="nav-item my-1 active
+        ">
+        
+        
+          <a class="nav-link p-0" href="/mysql/mysql-install-master-and-slave.html"><h6>MySQL主从</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/jenkins.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/jenkins.html"><h6>Jenkins</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+        </ul>
+    </li>
+    <li data-nav-id="/docker.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker.html"><h6>docker</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/docker/install.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/install.html"><h6>基于Linux下安装docker</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/docker-compose.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/docker-compose.html"><h6>安装docker-compose</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/docker-compose-ui.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/docker-compose-ui.html"><h6>安装docker-compose-ui</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/mysql.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/mysql.html"><h6>安装mysql</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/nexus3.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/nexus3.html"><h6>安装nexus3</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/nginx.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/nginx.html"><h6>安装nginx</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/redis.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/redis.html"><h6>安装redis</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/rocketmq.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/rocketmq.html"><h6>安装rocketmq</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/dubbo-admin.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/dubbo-admin.html"><h6>安装dubbo-admin</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/nacos.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/nacos.html"><h6>安装nacos</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/elasticsearch.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/elasticsearch.html"><h6>安装elasticsearch</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/skywalking.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/skywalking.html"><h6>安装skywalking</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/node-exporter.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/node-exporter.html"><h6>安装node-exporter</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/grafana.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/grafana.html"><h6>安装grafana</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/prometheus.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/prometheus.html"><h6>安装prometheus</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/promtail.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/promtail.html"><h6>安装promtail</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/loki.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/loki.html"><h6>安装loki</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/apisix.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/apisix.html"><h6>安装apisix</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/keycloak.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/keycloak.html"><h6>安装keycloak</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/zookeeper.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/zookeeper.html"><h6>安装zookeeper</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/postgres.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/postgres.html"><h6>安装postgres</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/sonar.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/sonar.html"><h6>安装sonar</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/mongo.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/mongo.html"><h6>安装mongo</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/docker-network-restart.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/docker-network-restart.html"><h6>重启docker网络</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </div>
+</nav>
+
+
+</div>
+                <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
+	<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#下载安装包">下载安装包</a></li>
+        <li><a href="#master配置-mycnf">master配置: my.cnf</a></li>
+        <li><a href="#slave配置-mycnf">slave配置: my.cnf</a></li>
+        <li><a href="#master执行">master执行</a></li>
+        <li><a href="#slave执行">slave执行</a></li>
+        <li><a href="#查看状态">查看状态</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+</div>
+                <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
+                
+
+<div class="d-flex flex-column">
+    <h1 class="js-title">MySQL主从</h1>
+    <div class="d-flex align-items-center">
+        
+    </div>
+</div>
+
+<hr>
+
+
+<h3 id="下载安装包">下载安装包</h3>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_eb9c9bc8e6">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_eb9c9bc8e6">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+mysql-5.7.38-1.el7.x86_64.rpm-bundle.tar
+ncurses-c++-libs-6.1-9.20180224.el8.x86_64.rpm
+ncurses-compat-libs-6.1-9.20180224.el8.x86_64.rpm
+mysql-community-libs-5.7.38-1.el7.x86_64.rpm
+mysql-community-common-5.7.38-1.el7.x86_64.rpm
+mysql-community-client-5.7.38-1.el7.x86_64.rpm
+mysql-community-server-5.7.38-1.el7.x86_64.rpm
+</code></pre>
+    </div>
+</div>
+
+
+
+
+<h3 id="master配置-mycnf">master配置: my.cnf</h3>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_67e6deb977">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_67e6deb977">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+server_id = 1
+log-bin = mysql-bin
+binlog_format = row
+binlog-ignore-db=mysql
+binlog-ignore-db=sys
+binlog-ignore-db=information_schema
+binlog-ignore-db=performance_schema
+#binlog-do-db = esteel
+auto_increment_offset = 1
+auto_increment_increment = 1
+log_bin_trust_function_creators = 1
+
+max_connections = 2000
+
+#innodb_buffer_pool_size = 128M
+#join_buffer_size = 128M
+#sort_buffer_size = 2M
+#read_rnd_buffer_size = 2M
+
+lower_case_table_names=1
+
+innodb_buffer_pool_size = 5G
+innodb_buffer_pool_instances = 8
+innodb_buffer_pool_load_at_startup = 1
+innodb_buffer_pool_dump_at_shutdown = 1
+innodb_lru_scan_depth = 2000
+innodb_io_capacity = 4000
+innodb_io_capacity_max = 8000
+innodb_print_all_deadlocks = 1
+innodb_sort_buffer_size = 16M
+
+
+character_set_server=utf8mb4
+#skip-grant-tables
+
+#是否开启慢查询日志，1表示开启，0表示关闭。
+slow-query-log = 1
+
+#MySQL数据库慢查询日志存储路径
+#slow-query-log-file = var/lib/mysql/localhost-slow.log
+
+#慢查询阈值，当查询时间多于设定的阈值时，记录日志。单位:秒
+long_query_time = 1
+
+gtid_mode = on
+enforce_gtid_consistency = 1
+log_slave_updates = 1
+relay_log_recovery = 1
+skip_slave_start = 1
+sync_binlog=1
+
+#rpl_semi_sync_master_enabled=1
+#rpl_semi_sync_master_timeout=10000  # 10秒（默认）
+
+relay_log_purge=0
+
+expire_logs_days = 15
+</code></pre>
+    </div>
+</div>
+
+
+
+
+<h3 id="slave配置-mycnf">slave配置: my.cnf</h3>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_601792fc56">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_601792fc56">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+server_id = 2
+log-bin = mysql-bin
+binlog_format = row
+relay-log = relay-log
+read-only = 1
+
+max_connections = 2000
+
+#innodb_buffer_pool_size = 128M
+#join_buffer_size = 128M
+#sort_buffer_size = 2M
+#read_rnd_buffer_size = 2M
+
+lower_case_table_names=1
+
+innodb_buffer_pool_size = 5G
+innodb_buffer_pool_instances = 8
+innodb_buffer_pool_load_at_startup = 1
+innodb_buffer_pool_dump_at_shutdown = 1
+innodb_lru_scan_depth = 2000
+innodb_io_capacity = 4000
+innodb_io_capacity_max = 8000
+innodb_print_all_deadlocks = 1
+innodb_sort_buffer_size = 16M
+
+
+character_set_server=utf8mb4
+#skip-grant-tables
+
+#是否开启慢查询日志，1表示开启，0表示关闭。
+slow-query-log = 1
+
+#MySQL数据库慢查询日志存储路径
+#slow-query-log-file = var/lib/mysql/localhost-slow.log
+
+#慢查询阈值，当查询时间多于设定的阈值时，记录日志。单位:秒
+long_query_time = 1
+
+gtid_mode = on
+enforce_gtid_consistency = 1
+log_slave_updates = 1
+relay_log_recovery = 1
+skip_slave_start = 1
+sync_binlog=1
+
+#rpl_semi_sync_slave_enabled=1
+
+relay_log_purge=0
+
+expire_logs_days = 15
+</code></pre>
+    </div>
+</div>
+
+
+
+
+<h3 id="master执行">master执行</h3>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_0ca22531e9">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_0ca22531e9">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+SET PASSWORD = PASSWORD(&#39;Q!w2e3r4&#39;);
+grant all privileges on *.* to &#39;root&#39;@&#39;%&#39; identified by &#39;Q!w2e3r4&#39; with grant option;
+GRANT REPLICATION SLAVE ON *.* TO &#39;root&#39;@&#39;%&#39; identified by &#39;Q!w2e3r4&#39;;
+FLUSH PRIVILEGES;
+</code></pre>
+    </div>
+</div>
+
+
+
+
+<h3 id="slave执行">slave执行</h3>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_2ad76e1423">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_2ad76e1423">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+CHANGE MASTER TO
+MASTER_HOST=&#39;10.11.90.124&#39;,
+MASTER_PORT=3306,
+MASTER_USER=&#39;root&#39;,
+MASTER_PASSWORD=&#39;Q!w2e3r4&#39;,
+MASTER_LOG_FILE=&#39;mysql-bin.000007&#39;,
+MASTER_LOG_POS=623;
+</code></pre>
+    </div>
+</div>
+
+
+
+
+<h3 id="查看状态">查看状态</h3>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_41dcccf02f">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_41dcccf02f">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+show master status;
+show slave status;
+start master;
+start slave;
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+    
+
+
+                    
+                    <div class="row"><div class="position-relative mx-auto col-lg-9">
+                          <div class="bg-primary overflow-hidden p-3 mt-5 shadow">
+
+    <h4 class="text-white text-center">Read more</h4>
+
+    <div class="d-flex justify-content-center"><a class="p-1 mr-3 d-inline-block text-white" href="/mysql.html" title="MySQL"><i class="fas fa-chevron-left p-1"></i>MySQL</a>
+        <a class="p-1 ml-3 d-inline-block text-white text-right" href="/jenkins.html" title="Jenkins">Jenkins<i class="fas fa-chevron-right p-1"></i></a>
+    </div>
+</div>
+
+
+                        </div></div> 
+
+                </div>
+
+            </div> 
+
+        </div> 
+<script src="https://lovetui.com/lib/jquery.min.js"></script> 
+<script src="https://lovetui.com/lib/popper.min.js"></script> 
+
+<script src="https://lovetui.com/js/bootstrap.min.js"></script> 
+
+
+<script type="text/javascript" src="/plugins/lunr.min.js"></script>
+<script type="text/javascript" src="/plugins/auto-complete.js"></script>
+<link href="/plugins/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+  
+      var baseurl = "https:\/\/lovetui.com\/";
+  
+</script>
+<script type="text/javascript" src="/plugins/search.js"></script>
+
+<script type="text/javascript" src="/plugins/favorites.js"></script>
+
+
+<script type="text/javascript" src="/plugins/clipboard.js"></script>
+<script>
+  new ClipboardJS('.btn');
+</script>
+</body>
+</html>

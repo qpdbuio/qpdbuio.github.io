@@ -3,3 +3,4 @@ languageCode = 'en-us'
 title = 'TUI LOVE'
 theme = 'ace-documentation'
 publishDir = "../"
+uglyurls = true

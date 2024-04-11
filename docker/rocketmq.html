@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html><head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="alternate" type="application/rss+xml" href="https://lovetui.com/docker/rocketmq/index.xml" title="TUI LOVE" />
+    <link rel="canonical" href="https://lovetui.com/docker/rocketmq.html">
+
+    <title>
+        
+        安装rocketmq | TUI LOVE
+        
+    </title>
+
+    
+    <link href="https://lovetui.com/css/fontawesome.min.css" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://lovetui.com/css/ace.min.css">
+
+    
+
+    
+    
+        
+    
+
+</head>
+<body><nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top" id="navbarMain">
+    <div class="container">
+        <div>
+            <a class="navbar-brand" href="/">
+                
+                TUI LOVE
+            </a>
+        </div>
+        
+    </div>
+    <div class="feed-icons">
+            <a href="https://lovetui.com/docker/rocketmq/index.xml"><img src="/img/feed-icon.svg" alt="RSS feed" /></a>
+        </div>
+    </nav>
+<div class="container-fluid">
+            <div class="row">
+
+                <div class="docs-sidenav order-0 col-12 col-md-3 col-lg-2 col-xl-2 position-sticky border-right"><nav class="navbar navbar-expand-md navbar-light pl-0">
+    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#sidenav-left-collapse" aria-controls="sidenav-left-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+     <div class="collapse navbar-collapse align-items-start flex-column" id="sidenav-left-collapse">
+            <form class="form-inline my-2 my-lg-0 searchbox">
+                <input class="form-control mr-sm-2 w-100" data-search-input id="search-by" type="text" placeholder="Search">
+            </form>
+
+        
+
+         <ul class="navbar-nav flex-column pt-3">
+    <li data-nav-id="/start.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/start.html"><h6>Start</h6></a>
+        
+    </li>
+    <li data-nav-id="/linux.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux.html"><h6>Linux</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/linux/fonts.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux/fonts.html"><h6>使用yum安装字体库</h6></a>
+        
+    </li>
+    <li data-nav-id="/linux/iptables.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux/iptables.html"><h6>iptables</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/linux/iptables/iptables-forward.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux/iptables/iptables-forward.html"><h6>使用iptables实现转发</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/mysql.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/mysql.html"><h6>MySQL</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/mysql/mysql-install-master-and-slave.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/mysql/mysql-install-master-and-slave.html"><h6>MySQL主从</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/jenkins.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/jenkins.html"><h6>Jenkins</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/jenkins/pipeline-java.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/jenkins/pipeline-java.html"><h6>Jenkins Pipeline 构建spring boot工程</h6></a>
+        
+    </li>
+    <li data-nav-id="/jenkins/pipeline-web.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/jenkins/pipeline-web.html"><h6>Jenkins Pipeline 构建前端工程</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/docker.html" class="nav-item my-1 parent haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker.html"><h6>docker</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/docker/install.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/install.html"><h6>基于Linux下安装docker</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/docker-compose.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/docker-compose.html"><h6>安装docker-compose</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/docker-compose-ui.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/docker-compose-ui.html"><h6>安装docker-compose-ui</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/mysql.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/mysql.html"><h6>安装mysql</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/nexus3.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/nexus3.html"><h6>安装nexus3</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/nginx.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/nginx.html"><h6>安装nginx</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/redis.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/redis.html"><h6>安装redis</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/rocketmq.html" class="nav-item my-1 active
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/rocketmq.html"><h6>安装rocketmq</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/dubbo-admin.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/dubbo-admin.html"><h6>安装dubbo-admin</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/nacos.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/nacos.html"><h6>安装nacos</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/elasticsearch.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/elasticsearch.html"><h6>安装elasticsearch</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/skywalking.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/skywalking.html"><h6>安装skywalking</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/node-exporter.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/node-exporter.html"><h6>安装node-exporter</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/grafana.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/grafana.html"><h6>安装grafana</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/prometheus.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/prometheus.html"><h6>安装prometheus</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/promtail.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/promtail.html"><h6>安装promtail</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/loki.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/loki.html"><h6>安装loki</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/apisix.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/apisix.html"><h6>安装apisix</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/keycloak.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/keycloak.html"><h6>安装keycloak</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/zookeeper.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/zookeeper.html"><h6>安装zookeeper</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/postgres.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/postgres.html"><h6>安装postgres</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/sonar.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/sonar.html"><h6>安装sonar</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/mongo.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/mongo.html"><h6>安装mongo</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/docker-network-restart.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/docker-network-restart.html"><h6>重启docker网络</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </div>
+</nav>
+
+
+</div>
+                <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
+	<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#已创建docker-net">已创建docker-net</a></li>
+        <li><a href="#docker-composeyml">docker-compose.yml</a></li>
+        <li><a href="#master-databrokerconfbrokerconf">Master: ./data/broker/conf/broker.conf</a></li>
+        <li><a href="#slave-databrokerconfbrokerconf">Slave: ./data/broker/conf/broker.conf</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+</div>
+                <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
+                
+
+<div class="d-flex flex-column">
+    <h1 class="js-title">安装rocketmq</h1>
+    <div class="d-flex align-items-center">
+        
+    </div>
+</div>
+
+<hr>
+
+
+<h3 id="已创建docker-net">已创建docker-net</h3>
+<h3 id="docker-composeyml">docker-compose.yml</h3>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_c32566572a">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_c32566572a">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+version: &#34;3&#34;
+services:
+  namesrv:
+    image: apache/rocketmq:4.9.4
+    container_name: rocketmq-namesrv
+    ports:
+      - &#34;9876:9876&#34;
+   volumes:
+      - ./data/namesrv:/home/rocketmq/namesrv/
+    command: sh mqnamesrv
+    networks:
+      - test-rocketmq
+  broker:
+    image: apache/rocketmq:4.9.4
+    container_name: rocketmq-broker
+    ports:
+      - &#34;10909:10909&#34;
+      - &#34;10911:10911&#34;
+      - &#34;10912:10912&#34;
+    volumes:
+      - ./data/broker/logs:/home/rocketmq/logs/rocketmqlogs
+      - ./data/broker/store:/home/rocketmq/store
+      - ./data/broker/conf/broker.conf:/home/rocketmq/rocketmq-4.9.4/conf/broker.conf
+    environment:
+      NAMESRV_ADDR: &#34;namesrv:/9876&#34;
+      JAVA_OPTS: &#34;-Xms1024m -Xmx1024m -Xmn200m -Drocketmq.namesrv.addr=namesrv:9876&#34;
+    command: sh mqbroker -n namesrv:9876  -c ../conf/broker.conf
+    depends_on:
+      - namesrv
+    networks:
+      - test-rocketmq
+  console:
+    image: apacherocketmq/rocketmq-dashboard:latest
+    container_name: rocketmq-console
+    ports:
+      - &#34;19876:8080&#34;
+    environment:
+      JAVA_OPTS: &#34;-Xms1024m -Xmx1024m -Xmn200m -Drocketmq.namesrv.addr=namesrv:9876&#34;
+    depends_on:
+      - namesrv
+    networks:
+      - docker-net
+
+networks:
+  docker-net:
+    external: true
+</code></pre>
+    </div>
+</div>
+
+
+
+
+<h3 id="master-databrokerconfbrokerconf">Master: ./data/broker/conf/broker.conf</h3>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_44380257c8">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_44380257c8">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+#所属集群名字
+brokerClusterName=DefaultCluster
+##broker名称，主从要一样，根据BrokerRole来确定谁是主谁是从
+brokerName=broker-a
+#0 表示 Master，&gt;0 表示 Slave
+brokerId=0
+#nameServer 地址，分号分割
+namesrvAddr=10.11.90.120:9876;10.11.90.128:9876
+#在发送消息时，自动创建服务器不存在的 topic，默认创建的队列数
+defaultTopicQueueNums=4
+#是否允许 Broker 自动创建 Topic，建议线下开启，线上关闭
+autoCreateTopicEnable=true
+#是否允许 Broker 自动创建订阅组，建议线下开启，线上关闭
+autoCreateSubscriptionGroup=true
+#Broker 对外服务的监听端口
+#brokerIP1 当前broker监听的IP
+# brokerIP1=192.168.3.27
+#存在broker主从时，在broker主节点上配置了brokerIP2的话,broker从节点会连接主节点配置的#brokerIP2来同步。
+# brokerIP2=192.168.88.131
+# listenPort=10911
+#删除文件时间点，默认凌晨 4 点
+deleteWhen=04
+#文件保留时间，默认 48 小时
+fileReservedTime=120
+#commitLog 每个文件的大小默认 1G
+mapedFileSizeCommitLog=1073741824
+#ConsumeQueue 每个文件默认存 30W 条，根据业务情况调整
+mapedFileSizeConsumeQueue=300000
+#destroyMapedFileIntervalForcibly=120000
+#redeleteHangedFileInterval=120000
+#检测物理文件磁盘空间 checkTransactionMessageEnable
+diskMaxUsedSpaceRatio=88
+#存储路径
+# /home/rocketmq/logs/rocketmqlogs
+# storePathRootDir=/home/rocketmq/store
+storePathRootDir=/opt/rocketmq-data/broker/store
+#限制的消息大小
+maxMessageSize=65536
+#flushCommitLogLeastPages=4
+#flushConsumeQueueLeastPages=2
+#flushCommitLogThoroughInterval=10000
+#flushConsumeQueueThoroughInterval=60000
+#Broker 的角色
+#- ASYNC_MASTER 异步复制 Master
+#- SYNC_MASTER 同步双写 Master
+#- SLAVE
+brokerRole=ASYNC_MASTER
+#刷盘方式
+#- ASYNC_FLUSH 异步刷盘
+#- SYNC_FLUSH 同步刷盘
+flushDiskType=ASYNC_FLUSH
+#checkTransactionMessageEnable=false
+#发消息线程池数量
+#sendMessageThreadPoolNums=128
+#拉消息线程池数量
+#pullMessageThreadPoolNums=128
+#默认该值为false，表示该Broker不承载系统自定义用于存储消息轨迹的topic
+traceTopicEnable=false
+#默认回查次数是15次，15次后还没成功就回滚
+transactionCheckMax=15
+#transactionCheckInterval参数：默认定时回查间隔时间是1分钟
+transactionCheckInterval=60000
+#延迟消息
+messageDelayLevel=1s 5s 10s 15s 30s 1m 5m 10m 15m 30m 1h 3h 6h 12h 1d 7d 15d 30d
+</code></pre>
+    </div>
+</div>
+
+
+
+
+<h3 id="slave-databrokerconfbrokerconf">Slave: ./data/broker/conf/broker.conf</h3>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_3e7c3fb0de">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_3e7c3fb0de">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+#所属集群名字
+brokerClusterName=DefaultCluster
+##broker名称，主从要一样，根据BrokerRole来确定谁是主谁是从
+brokerName=broker-a
+#0 表示 Master，&gt;0 表示 Slave
+brokerId=1
+#nameServer 地址，分号分割
+namesrvAddr=10.11.90.120:9876;10.11.90.128:9876
+#在发送消息时，自动创建服务器不存在的 topic，默认创建的队列数
+defaultTopicQueueNums=4
+#是否允许 Broker 自动创建 Topic，建议线下开启，线上关闭
+autoCreateTopicEnable=true
+#是否允许 Broker 自动创建订阅组，建议线下开启，线上关闭
+autoCreateSubscriptionGroup=true
+#Broker 对外服务的监听端口
+#brokerIP1 当前broker监听的IP
+# brokerIP1=192.168.3.27
+#存在broker主从时，在broker主节点上配置了brokerIP2的话,broker从节点会连接主节点配置的#brokerIP2来同步。
+# brokerIP2=192.168.88.131
+# listenPort=10911
+#删除文件时间点，默认凌晨 4 点
+deleteWhen=04
+#文件保留时间，默认 48 小时
+fileReservedTime=120
+#commitLog 每个文件的大小默认 1G
+mapedFileSizeCommitLog=1073741824
+#ConsumeQueue 每个文件默认存 30W 条，根据业务情况调整
+mapedFileSizeConsumeQueue=300000
+#destroyMapedFileIntervalForcibly=120000
+#redeleteHangedFileInterval=120000
+#检测物理文件磁盘空间 checkTransactionMessageEnable
+diskMaxUsedSpaceRatio=88
+#存储路径
+storePathRootDir=/opt/rocketmq-data/broker/store
+#commitLog 存储路径
+storePathCommitLog=/opt/rocketmq-data/broker/store/commitlog
+#消费队列存储路径存储路径
+storePathConsumeQueue=/opt/rocketmq-data/broker/store/consumequeue
+#消息索引存储路径
+storePathIndex=/opt/rocketmq-data/broker/store/index
+#checkpoint 文件存储路径
+storeCheckpoint=/opt/rocketmq-data/broker/store/checkpoint
+#abort 文件存储路径
+abortFile=/opt/rocketmq/broker/store/abort
+#限制的消息大小
+maxMessageSize=65536
+#flushCommitLogLeastPages=4
+#flushConsumeQueueLeastPages=2
+#flushCommitLogThoroughInterval=10000
+#flushConsumeQueueThoroughInterval=60000
+#Broker 的角色
+#- ASYNC_MASTER 异步复制 Master
+#- SYNC_MASTER 同步双写 Master
+#- SLAVE
+brokerRole=SLAVE
+#刷盘方式
+#- ASYNC_FLUSH 异步刷盘
+#- SYNC_FLUSH 同步刷盘
+flushDiskType=ASYNC_FLUSH
+#checkTransactionMessageEnable=false
+#发消息线程池数量
+#sendMessageThreadPoolNums=128
+#拉消息线程池数量
+#pullMessageThreadPoolNums=128
+#默认该值为false，表示该Broker不承载系统自定义用于存储消息轨迹的topic
+traceTopicEnable=false
+#默认回查次数是15次，15次后还没成功就回滚
+transactionCheckMax=15
+#transactionCheckInterval参数：默认定时回查间隔时间是1分钟
+transactionCheckInterval=60000
+#延迟消息
+messageDelayLevel=1s 5s 10s 15s 30s 1m 5m 10m 15m 30m 1h 3h 6h 12h 1d 7d 15d 30d
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+    
+
+
+                    
+                    <div class="row"><div class="position-relative mx-auto col-lg-9">
+                          <div class="bg-primary overflow-hidden p-3 mt-5 shadow">
+
+    <h4 class="text-white text-center">Read more</h4>
+
+    <div class="d-flex justify-content-center"><a class="p-1 mr-3 d-inline-block text-white" href="/docker/redis.html" title="安装redis"><i class="fas fa-chevron-left p-1"></i>安装redis</a>
+        <a class="p-1 ml-3 d-inline-block text-white text-right" href="/docker/dubbo-admin.html" title="安装dubbo-admin">安装dubbo-admin<i class="fas fa-chevron-right p-1"></i></a>
+    </div>
+</div>
+
+
+                        </div></div> 
+
+                </div>
+
+            </div> 
+
+        </div> 
+<script src="https://lovetui.com/lib/jquery.min.js"></script> 
+<script src="https://lovetui.com/lib/popper.min.js"></script> 
+
+<script src="https://lovetui.com/js/bootstrap.min.js"></script> 
+
+
+<script type="text/javascript" src="/plugins/lunr.min.js"></script>
+<script type="text/javascript" src="/plugins/auto-complete.js"></script>
+<link href="/plugins/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+  
+      var baseurl = "https:\/\/lovetui.com\/";
+  
+</script>
+<script type="text/javascript" src="/plugins/search.js"></script>
+
+<script type="text/javascript" src="/plugins/favorites.js"></script>
+
+
+<script type="text/javascript" src="/plugins/clipboard.js"></script>
+<script>
+  new ClipboardJS('.btn');
+</script>
+</body>
+</html>

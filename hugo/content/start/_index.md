@@ -1,7 +1,11 @@
 +++
-title = "start"
+title = "Start"
 description = ""
-weight = 2
+weight = 1
 +++
 
-## start
+## 
+* [linux](/linux.html)
+* [mysql](/mysql.html)
+* [docker](/docker.html)
+* [jenkins](/jenkins.html)

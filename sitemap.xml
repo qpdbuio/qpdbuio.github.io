@@ -2,14 +2,80 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lovetui.com/configure/</loc>
+    <loc>https://lovetui.com/mysql/mysql-install-master-and-slave.html</loc>
   </url><url>
-    <loc>https://lovetui.com/start/</loc>
+    <loc>https://lovetui.com/start.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/install.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/linux.html</loc>
   </url><url>
     <loc>https://lovetui.com/</loc>
   </url><url>
-    <loc>https://lovetui.com/categories/</loc>
+    <loc>https://lovetui.com/linux/fonts.html</loc>
   </url><url>
-    <loc>https://lovetui.com/tags/</loc>
+    <loc>https://lovetui.com/docker/docker-compose.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/linux/iptables.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/mysql.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/docker-compose-ui.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/jenkins.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/mysql.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/nexus3.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/nginx.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/redis.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/rocketmq.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/dubbo-admin.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/nacos.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/elasticsearch.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/skywalking.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/node-exporter.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/grafana.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/prometheus.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/promtail.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/loki.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/apisix.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/keycloak.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/zookeeper.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/postgres.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/sonar.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/mongo.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/categories.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/jenkins/pipeline-java.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/jenkins/pipeline-web.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/tags.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/linux/iptables/iptables-forward.html</loc>
+  </url><url>
+    <loc>https://lovetui.com/docker/docker-network-restart.html</loc>
   </url>
 </urlset>

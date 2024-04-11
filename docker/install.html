@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html><head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="alternate" type="application/rss+xml" href="https://lovetui.com/docker/install/index.xml" title="TUI LOVE" />
+    <link rel="canonical" href="https://lovetui.com/docker/install.html">
+
+    <title>
+        
+        基于Linux下安装docker | TUI LOVE
+        
+    </title>
+
+    
+    <link href="https://lovetui.com/css/fontawesome.min.css" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://lovetui.com/css/ace.min.css">
+
+    
+
+    
+    
+        
+    
+
+</head>
+<body><nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top" id="navbarMain">
+    <div class="container">
+        <div>
+            <a class="navbar-brand" href="/">
+                
+                TUI LOVE
+            </a>
+        </div>
+        
+    </div>
+    <div class="feed-icons">
+            <a href="https://lovetui.com/docker/install/index.xml"><img src="/img/feed-icon.svg" alt="RSS feed" /></a>
+        </div>
+    </nav>
+<div class="container-fluid">
+            <div class="row">
+
+                <div class="docs-sidenav order-0 col-12 col-md-3 col-lg-2 col-xl-2 position-sticky border-right"><nav class="navbar navbar-expand-md navbar-light pl-0">
+    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#sidenav-left-collapse" aria-controls="sidenav-left-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+     <div class="collapse navbar-collapse align-items-start flex-column" id="sidenav-left-collapse">
+            <form class="form-inline my-2 my-lg-0 searchbox">
+                <input class="form-control mr-sm-2 w-100" data-search-input id="search-by" type="text" placeholder="Search">
+            </form>
+
+        
+
+         <ul class="navbar-nav flex-column pt-3">
+    <li data-nav-id="/start.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/start.html"><h6>Start</h6></a>
+        
+    </li>
+    <li data-nav-id="/linux.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux.html"><h6>Linux</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/linux/fonts.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux/fonts.html"><h6>使用yum安装字体库</h6></a>
+        
+    </li>
+    <li data-nav-id="/linux/iptables.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux/iptables.html"><h6>iptables</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/linux/iptables/iptables-forward.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux/iptables/iptables-forward.html"><h6>使用iptables实现转发</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/mysql.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/mysql.html"><h6>MySQL</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/mysql/mysql-install-master-and-slave.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/mysql/mysql-install-master-and-slave.html"><h6>MySQL主从</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/jenkins.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/jenkins.html"><h6>Jenkins</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/jenkins/pipeline-java.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/jenkins/pipeline-java.html"><h6>Jenkins Pipeline 构建spring boot工程</h6></a>
+        
+    </li>
+    <li data-nav-id="/jenkins/pipeline-web.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/jenkins/pipeline-web.html"><h6>Jenkins Pipeline 构建前端工程</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/docker.html" class="nav-item my-1 parent haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker.html"><h6>docker</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/docker/install.html" class="nav-item my-1 active
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/install.html"><h6>基于Linux下安装docker</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/docker-compose.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/docker-compose.html"><h6>安装docker-compose</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/docker-compose-ui.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/docker-compose-ui.html"><h6>安装docker-compose-ui</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/mysql.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/mysql.html"><h6>安装mysql</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/nexus3.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/nexus3.html"><h6>安装nexus3</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/nginx.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/nginx.html"><h6>安装nginx</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/redis.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/redis.html"><h6>安装redis</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/rocketmq.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/rocketmq.html"><h6>安装rocketmq</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/dubbo-admin.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/dubbo-admin.html"><h6>安装dubbo-admin</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/nacos.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/nacos.html"><h6>安装nacos</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/elasticsearch.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/elasticsearch.html"><h6>安装elasticsearch</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/skywalking.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/skywalking.html"><h6>安装skywalking</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/node-exporter.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/node-exporter.html"><h6>安装node-exporter</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/grafana.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/grafana.html"><h6>安装grafana</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/prometheus.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/prometheus.html"><h6>安装prometheus</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/promtail.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/promtail.html"><h6>安装promtail</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/loki.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/loki.html"><h6>安装loki</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/apisix.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/apisix.html"><h6>安装apisix</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/keycloak.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/keycloak.html"><h6>安装keycloak</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/zookeeper.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/zookeeper.html"><h6>安装zookeeper</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/postgres.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/postgres.html"><h6>安装postgres</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/sonar.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/sonar.html"><h6>安装sonar</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/mongo.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/mongo.html"><h6>安装mongo</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/docker-network-restart.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/docker-network-restart.html"><h6>重启docker网络</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </div>
+</nav>
+
+
+</div>
+                <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
+	<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#关闭防火墙">关闭防火墙</a></li>
+        <li><a href="#linux系统">linux系统</a></li>
+        <li><a href="#已安装yum和yum-utils">已安装yum和yum-utils</a></li>
+        <li><a href="#添加docker的yum源">添加docker的yum源</a></li>
+        <li><a href="#yum安装">yum安装</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+</div>
+                <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
+                
+
+<div class="d-flex flex-column">
+    <h1 class="js-title">基于Linux下安装docker</h1>
+    <div class="d-flex align-items-center">
+        
+    </div>
+</div>
+
+<hr>
+
+
+<h3 id="关闭防火墙">关闭防火墙</h3>
+<ul>
+<li>
+<p>firewalld
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_b9795fbe3b">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_b9795fbe3b">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+systemctl stop firewalld
+systemctl disable firewalld
+chkconfig firewalld off
+</code></pre>
+    </div>
+</div>
+
+
+
+</p>
+</li>
+<li>
+<p>iptables
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_4bec88c4db">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_4bec88c4db">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+systemctl stop iptables
+systemctl disable iptables
+chkconfig iptables off
+</code></pre>
+    </div>
+</div>
+
+
+
+</p>
+</li>
+</ul>
+<h3 id="linux系统">linux系统</h3>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_1e8d8e015b">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_1e8d8e015b">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+net.ipv4.ip_forward = 1
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_established = 300
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_time_wait = 120
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_close_wait = 60
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_fin_wait = 120
+</code></pre>
+    </div>
+</div>
+
+
+
+
+<h3 id="已安装yum和yum-utils">已安装yum和yum-utils</h3>
+<h3 id="添加docker的yum源">添加docker的yum源</h3>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_a3b35debd6">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_a3b35debd6">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+sudo yum-config-manager --add-repo https://download.daocloud.io/docker/linux/centos/docker-ce.repo
+sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+</code></pre>
+    </div>
+</div>
+
+
+
+
+<h3 id="yum安装">yum安装</h3>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_bae42d10e6">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_bae42d10e6">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+sudo yum install -y  docker-ce.*
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo service docker status
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+    
+
+
+                    
+                    <div class="row"><div class="position-relative mx-auto col-lg-9">
+                          <div class="bg-primary overflow-hidden p-3 mt-5 shadow">
+
+    <h4 class="text-white text-center">Read more</h4>
+
+    <div class="d-flex justify-content-center"><a class="p-1 mr-3 d-inline-block text-white" href="/docker.html" title="docker"><i class="fas fa-chevron-left p-1"></i>docker</a>
+        <a class="p-1 ml-3 d-inline-block text-white text-right" href="/docker/docker-compose.html" title="安装docker-compose">安装docker-compose<i class="fas fa-chevron-right p-1"></i></a>
+    </div>
+</div>
+
+
+                        </div></div> 
+
+                </div>
+
+            </div> 
+
+        </div> 
+<script src="https://lovetui.com/lib/jquery.min.js"></script> 
+<script src="https://lovetui.com/lib/popper.min.js"></script> 
+
+<script src="https://lovetui.com/js/bootstrap.min.js"></script> 
+
+
+<script type="text/javascript" src="/plugins/lunr.min.js"></script>
+<script type="text/javascript" src="/plugins/auto-complete.js"></script>
+<link href="/plugins/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+  
+      var baseurl = "https:\/\/lovetui.com\/";
+  
+</script>
+<script type="text/javascript" src="/plugins/search.js"></script>
+
+<script type="text/javascript" src="/plugins/favorites.js"></script>
+
+
+<script type="text/javascript" src="/plugins/clipboard.js"></script>
+<script>
+  new ClipboardJS('.btn');
+</script>
+</body>
+</html>

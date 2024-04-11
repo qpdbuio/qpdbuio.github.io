@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html><head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="alternate" type="application/rss+xml" href="https://lovetui.com/jenkins/pipeline-java/index.xml" title="TUI LOVE" />
+    <link rel="canonical" href="https://lovetui.com/jenkins/pipeline-java.html">
+
+    <title>
+        
+        Jenkins Pipeline 构建spring boot工程 | TUI LOVE
+        
+    </title>
+
+    
+    <link href="https://lovetui.com/css/fontawesome.min.css" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://lovetui.com/css/ace.min.css">
+
+    
+
+    
+    
+        
+    
+
+</head>
+<body><nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top" id="navbarMain">
+    <div class="container">
+        <div>
+            <a class="navbar-brand" href="/">
+                
+                TUI LOVE
+            </a>
+        </div>
+        
+    </div>
+    <div class="feed-icons">
+            <a href="https://lovetui.com/jenkins/pipeline-java/index.xml"><img src="/img/feed-icon.svg" alt="RSS feed" /></a>
+        </div>
+    </nav>
+<div class="container-fluid">
+            <div class="row">
+
+                <div class="docs-sidenav order-0 col-12 col-md-3 col-lg-2 col-xl-2 position-sticky border-right"><nav class="navbar navbar-expand-md navbar-light pl-0">
+    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#sidenav-left-collapse" aria-controls="sidenav-left-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+     <div class="collapse navbar-collapse align-items-start flex-column" id="sidenav-left-collapse">
+            <form class="form-inline my-2 my-lg-0 searchbox">
+                <input class="form-control mr-sm-2 w-100" data-search-input id="search-by" type="text" placeholder="Search">
+            </form>
+
+        
+
+         <ul class="navbar-nav flex-column pt-3">
+    <li data-nav-id="/start.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/start.html"><h6>Start</h6></a>
+        
+    </li>
+    <li data-nav-id="/linux.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux.html"><h6>Linux</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/linux/fonts.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux/fonts.html"><h6>使用yum安装字体库</h6></a>
+        
+    </li>
+    <li data-nav-id="/linux/iptables.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux/iptables.html"><h6>iptables</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/linux/iptables/iptables-forward.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/linux/iptables/iptables-forward.html"><h6>使用iptables实现转发</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/mysql.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/mysql.html"><h6>MySQL</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/mysql/mysql-install-master-and-slave.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/mysql/mysql-install-master-and-slave.html"><h6>MySQL主从</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/jenkins.html" class="nav-item my-1 parent haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/jenkins.html"><h6>Jenkins</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/jenkins/pipeline-java.html" class="nav-item my-1 active
+        ">
+        
+        
+          <a class="nav-link p-0" href="/jenkins/pipeline-java.html"><h6>Jenkins Pipeline 构建spring boot工程</h6></a>
+        
+    </li>
+    <li data-nav-id="/jenkins/pipeline-web.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/jenkins/pipeline-web.html"><h6>Jenkins Pipeline 构建前端工程</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/docker.html" class="nav-item my-1 haschildren
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker.html"><h6>docker</h6></a>
+        
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/docker/install.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/install.html"><h6>基于Linux下安装docker</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/docker-compose.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/docker-compose.html"><h6>安装docker-compose</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/docker-compose-ui.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/docker-compose-ui.html"><h6>安装docker-compose-ui</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/mysql.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/mysql.html"><h6>安装mysql</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/nexus3.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/nexus3.html"><h6>安装nexus3</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/nginx.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/nginx.html"><h6>安装nginx</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/redis.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/redis.html"><h6>安装redis</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/rocketmq.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/rocketmq.html"><h6>安装rocketmq</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/dubbo-admin.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/dubbo-admin.html"><h6>安装dubbo-admin</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/nacos.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/nacos.html"><h6>安装nacos</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/elasticsearch.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/elasticsearch.html"><h6>安装elasticsearch</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/skywalking.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/skywalking.html"><h6>安装skywalking</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/node-exporter.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/node-exporter.html"><h6>安装node-exporter</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/grafana.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/grafana.html"><h6>安装grafana</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/prometheus.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/prometheus.html"><h6>安装prometheus</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/promtail.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/promtail.html"><h6>安装promtail</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/loki.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/loki.html"><h6>安装loki</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/apisix.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/apisix.html"><h6>安装apisix</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/keycloak.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/keycloak.html"><h6>安装keycloak</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/zookeeper.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/zookeeper.html"><h6>安装zookeeper</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/postgres.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/postgres.html"><h6>安装postgres</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/sonar.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/sonar.html"><h6>安装sonar</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/mongo.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/mongo.html"><h6>安装mongo</h6></a>
+        
+    </li>
+    <li data-nav-id="/docker/docker-network-restart.html" class="nav-item my-1
+        ">
+        
+        
+          <a class="nav-link p-0" href="/docker/docker-network-restart.html"><h6>重启docker网络</h6></a>
+        
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </div>
+</nav>
+
+
+</div>
+                <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
+	<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#jenkins-构建参数">Jenkins 构建参数</a></li>
+        <li><a href="#jenkins-脚本">Jenkins 脚本</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+</div>
+                <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
+                
+
+<div class="d-flex flex-column">
+    <h1 class="js-title">Jenkins Pipeline 构建spring boot工程</h1>
+    <div class="d-flex align-items-center">
+        
+    </div>
+</div>
+
+<hr>
+
+
+<h3 id="说明">说明</h3>
+<p>这是一个spring boot项目, 通过Jenkins实现自动打包自动部署的构建过程.</p>
+<ul>
+<li>准备参数化构建</li>
+<li>首先checkout获取git仓库代码</li>
+<li>使用maven编译打包工程project_name.tar.gz</li>
+<li>通过ssh上传project_name.tar.gz和docker-compose.yaml</li>
+<li>远程ssh使用docker-compose up启动docker</li>
+</ul>
+<h3 id="jenkins-构建参数">Jenkins 构建参数</h3>
+
+<div class="table " role="alert">
+    <table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ServerAPI</td>
+<td>127.0.0.1</td>
+<td>API服务地址</td>
+</tr>
+<tr>
+<td>PortAPI</td>
+<td>8181</td>
+<td>API服务端口</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>127.0.0.1</td>
+<td>前端IP地址</td>
+</tr>
+<tr>
+<td>Port</td>
+<td>8080</td>
+<td>前端端口</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3 id="jenkins-脚本">Jenkins 脚本</h3>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_610efa8b54">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_610efa8b54">
+    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
+pipeline{
+    agent any
+    environment  {
+        server = &#34;project_name-$Server&#34;
+    }
+    stages {
+        stage(&#39;checkout&#39;) {
+            steps{
+                checkout([$class: &#39;GitSCM&#39;, branches: [[name: &#39;*/${branch_name}&#39;]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: &#39;CleanBeforeCheckout&#39;],[$class: &#39;RelativeTargetDirectory&#39;, relativeTargetDir: &#39;project_name&#39;]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: &#39;cfbd1efc-e3de-46f1-926c-5ca9a86d00a8&#39;, url: &#39;https://github.com/project_name.git&#39;]]])
+            }
+        }
+        stage(&#39;install&#39;) {
+            steps{
+                sh &#34;node -v&#34;
+                sh &#34;npm -v&#34;
+                dir(&#34;project_name&#34;) {
+                    sh &#34;pwd&#34;
+                    sh &#34;&#34;&#34;sed -i &#34;s/^mq.autoprice.queue.*/#/g&#34; application-dev1.properties&#34;&#34;&#34;
+                    sh &#34;&#34;&#34;echo &gt;&gt; application-dev1.properties&#34;&#34;&#34;
+                    sh &#34;&#34;&#34;echo mq.message.queue\\=mq.queue.message.${Version} &gt;&gt; application-dev1.properties&#34;&#34;&#34;
+                }
+                dir(&#34;project_name/dist/&#34;) {
+                    sh &#34;tar -zcvf project_name.tar.gz *&#34;
+                }
+            }
+        }
+        stage(&#39;build&#39;) {
+            steps{
+                sh &#34;mvn -f ./project/pom.xml -s /opt/maven/conf/settings.xml -gs /opt/maven/conf/settings.xml clean install -P dev1&#34;
+            }
+        }
+        stage(&#39;push&#39;) {
+            steps{
+                sshPublisher(
+                    publishers: [
+                        sshPublisherDesc(
+                            configName: &#34;$server&#34;, 
+                            transfers: [
+                                sshTransfer(cleanRemote: true, excludes: &#39;&#39;, execCommand: &#39;&#39;&#39;
+mkdir /opt/war/${JOB_NAME}/bin/
+mkdir /opt/war/${JOB_NAME}/logs/
+cat &gt; /opt/war/${JOB_NAME}/docker-compose.yaml &lt;&lt; EOF
+version: &#34;3&#34;
+services: 
+  tomcat:
+    image: &#34;tomcat:8.5.40-jre8-alpine&#34;
+    container_name: &#34;tomcat_${JOB_NAME}&#34;
+    restart: &#34;always&#34;
+    environment:
+      - TZ=Asia/Shanghai
+      - DUBBO_IP_TO_REGISTRY=${Server}
+      - DUBBO_PORT_TO_REGISTRY=${Port}
+      - DUBBO_PORT_TO_BIND=${Port}
+    command: 
+      - /bin/bash
+      - -c
+      - |
+        sh bin/catalina.sh run
+    ports: 
+      - &#34;${Port}:8080&#34;
+    volumes: 
+      - &#34;/etc/timezone:/etc/timezone:ro&#34;
+      - &#34;/etc/localtime:/etc/localtime:ro&#34;
+      - &#34;/usr/share/fonts/:/usr/share/fonts/&#34;
+      - &#34;/opt/war/${JOB_NAME}/bin/setenv.sh:/usr/local/tomcat/bin/setenv.sh:ro&#34;
+      - &#34;/opt/war/${JOB_NAME}/logs/:/usr/local/logs&#34;
+      - &#34;/opt/war/${JOB_NAME}/target/:/usr/local/tomcat/webapps&#34;
+EOF
+cat &gt; /opt/war/${JOB_NAME}/bin/setenv.sh &lt;&lt; EOF
+JAVA_OPTS=&#34;-server -Xms500m -Xmx500m -Xmn200m&#34;
+EOF
+mv /opt/war/${JOB_NAME}/target/project_name-*.war /opt/war/${JOB_NAME}/target/project_name.war
+docker-compose -f /opt/war/${JOB_NAME}/docker-compose.yaml down
+docker-compose -f /opt/war/${JOB_NAME}/docker-compose.yaml up -d
+&#39;&#39;&#39;, execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: &#39;[, ]+&#39;, remoteDirectory: &#39;/${JOB_NAME}/www/&#39;, remoteDirectorySDF: false, removePrefix: &#39;project_name/dist/&#39;, sourceFiles: &#39;project_name/dist/project_name.tar.gz&#39;)
+                            ], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false
+                        )
+                    ]
+                )
+            }
+        }
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+    
+
+
+                    
+                    <div class="row"><div class="position-relative mx-auto col-lg-9">
+                          <div class="bg-primary overflow-hidden p-3 mt-5 shadow">
+
+    <h4 class="text-white text-center">Read more</h4>
+
+    <div class="d-flex justify-content-center"><a class="p-1 mr-3 d-inline-block text-white" href="/jenkins.html" title="Jenkins"><i class="fas fa-chevron-left p-1"></i>Jenkins</a>
+        <a class="p-1 ml-3 d-inline-block text-white text-right" href="/jenkins/pipeline-web.html" title="Jenkins Pipeline 构建前端工程">Jenkins Pipeline 构建前端工程<i class="fas fa-chevron-right p-1"></i></a>
+    </div>
+</div>
+
+
+                        </div></div> 
+
+                </div>
+
+            </div> 
+
+        </div> 
+<script src="https://lovetui.com/lib/jquery.min.js"></script> 
+<script src="https://lovetui.com/lib/popper.min.js"></script> 
+
+<script src="https://lovetui.com/js/bootstrap.min.js"></script> 
+
+
+<script type="text/javascript" src="/plugins/lunr.min.js"></script>
+<script type="text/javascript" src="/plugins/auto-complete.js"></script>
+<link href="/plugins/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+  
+      var baseurl = "https:\/\/lovetui.com\/";
+  
+</script>
+<script type="text/javascript" src="/plugins/search.js"></script>
+
+<script type="text/javascript" src="/plugins/favorites.js"></script>
+
+
+<script type="text/javascript" src="/plugins/clipboard.js"></script>
+<script>
+  new ClipboardJS('.btn');
+</script>
+</body>
+</html>
