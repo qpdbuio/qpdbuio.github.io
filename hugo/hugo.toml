@@ -1,6 +1,6 @@
-baseURL = 'https://lovetui.com/'
+baseURL = 'https://yunpass.cn/'
 languageCode = 'en-us'
-title = 'TUI LOVE'
+title = '云笔迹 - 自由记录，或有谬误，仅供参考。'
 theme = 'ace-documentation'
 publishDir = "../"
 uglyurls = true

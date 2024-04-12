@@ -2,80 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lovetui.com/mysql/mysql-install-master-and-slave.html</loc>
+    <loc>https://yunpass.cn/mysql/mysql-install-master-and-slave.html</loc>
   </url><url>
-    <loc>https://lovetui.com/start.html</loc>
+    <loc>https://yunpass.cn/start.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/install.html</loc>
+    <loc>https://yunpass.cn/docker/install.html</loc>
   </url><url>
-    <loc>https://lovetui.com/linux.html</loc>
+    <loc>https://yunpass.cn/linux.html</loc>
   </url><url>
-    <loc>https://lovetui.com/</loc>
+    <loc>https://yunpass.cn/linux/fonts.html</loc>
   </url><url>
-    <loc>https://lovetui.com/linux/fonts.html</loc>
+    <loc>https://yunpass.cn/docker/docker-compose.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/docker-compose.html</loc>
+    <loc>https://yunpass.cn/</loc>
   </url><url>
-    <loc>https://lovetui.com/linux/iptables.html</loc>
+    <loc>https://yunpass.cn/linux/iptables.html</loc>
   </url><url>
-    <loc>https://lovetui.com/mysql.html</loc>
+    <loc>https://yunpass.cn/mysql.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/docker-compose-ui.html</loc>
+    <loc>https://yunpass.cn/docker/docker-compose-ui.html</loc>
   </url><url>
-    <loc>https://lovetui.com/jenkins.html</loc>
+    <loc>https://yunpass.cn/jenkins.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/mysql.html</loc>
+    <loc>https://yunpass.cn/docker/mysql.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker.html</loc>
+    <loc>https://yunpass.cn/docker.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/nexus3.html</loc>
+    <loc>https://yunpass.cn/docker/nexus3.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/nginx.html</loc>
+    <loc>https://yunpass.cn/docker/nginx.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/redis.html</loc>
+    <loc>https://yunpass.cn/docker/redis.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/rocketmq.html</loc>
+    <loc>https://yunpass.cn/docker/rocketmq.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/dubbo-admin.html</loc>
+    <loc>https://yunpass.cn/docker/dubbo-admin.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/nacos.html</loc>
+    <loc>https://yunpass.cn/docker/nacos.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/elasticsearch.html</loc>
+    <loc>https://yunpass.cn/docker/elasticsearch.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/skywalking.html</loc>
+    <loc>https://yunpass.cn/docker/skywalking.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/node-exporter.html</loc>
+    <loc>https://yunpass.cn/docker/node-exporter.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/grafana.html</loc>
+    <loc>https://yunpass.cn/docker/grafana.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/prometheus.html</loc>
+    <loc>https://yunpass.cn/docker/prometheus.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/promtail.html</loc>
+    <loc>https://yunpass.cn/docker/promtail.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/loki.html</loc>
+    <loc>https://yunpass.cn/docker/loki.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/apisix.html</loc>
+    <loc>https://yunpass.cn/docker/apisix.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/keycloak.html</loc>
+    <loc>https://yunpass.cn/docker/keycloak.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/zookeeper.html</loc>
+    <loc>https://yunpass.cn/docker/zookeeper.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/postgres.html</loc>
+    <loc>https://yunpass.cn/docker/postgres.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/sonar.html</loc>
+    <loc>https://yunpass.cn/docker/sonar.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/mongo.html</loc>
+    <loc>https://yunpass.cn/docker/mongo.html</loc>
   </url><url>
-    <loc>https://lovetui.com/categories.html</loc>
+    <loc>https://yunpass.cn/docker/jenkins.html</loc>
   </url><url>
-    <loc>https://lovetui.com/jenkins/pipeline-java.html</loc>
+    <loc>https://yunpass.cn/categories.html</loc>
   </url><url>
-    <loc>https://lovetui.com/jenkins/pipeline-web.html</loc>
+    <loc>https://yunpass.cn/jenkins/pipeline-java.html</loc>
   </url><url>
-    <loc>https://lovetui.com/tags.html</loc>
+    <loc>https://yunpass.cn/jenkins/pipeline-web.html</loc>
   </url><url>
-    <loc>https://lovetui.com/linux/iptables/iptables-forward.html</loc>
+    <loc>https://yunpass.cn/tags.html</loc>
   </url><url>
-    <loc>https://lovetui.com/docker/docker-network-restart.html</loc>
+    <loc>https://yunpass.cn/linux/iptables/iptables-forward.html</loc>
+  </url><url>
+    <loc>https://yunpass.cn/docker/docker-network-restart.html</loc>
   </url>
 </urlset>

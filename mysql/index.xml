@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MySQL on TUI LOVE</title>
-    <link>https://lovetui.com/mysql.html</link>
-    <description>Recent content in MySQL on TUI LOVE</description>
+    <title>MySQL on 云笔迹 - 自由记录，或有谬误，仅供参考。</title>
+    <link>https://yunpass.cn/mysql.html</link>
+    <description>Recent content in MySQL on 云笔迹 - 自由记录，或有谬误，仅供参考。</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://lovetui.com/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yunpass.cn/mysql/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link rel="alternate" type="application/rss+xml" href="https://yunpass.cn/docker/prometheus/index.xml" title="云笔迹 - 自由记录，或有谬误，仅供参考。" />
-    <link rel="canonical" href="https://yunpass.cn/docker/prometheus.html">
+    <link rel="alternate" type="application/rss+xml" href="https://yunpass.cn/docker/jenkins/index.xml" title="云笔迹 - 自由记录，或有谬误，仅供参考。" />
+    <link rel="canonical" href="https://yunpass.cn/docker/jenkins.html">
 
     <title>
         
-        安装prometheus | 云笔迹 - 自由记录，或有谬误，仅供参考。
+        安装jenkins | 云笔迹 - 自由记录，或有谬误，仅供参考。
         
     </title>
 
@@ -38,7 +38,7 @@
         
     </div>
     <div class="feed-icons">
-            <a href="https://yunpass.cn/docker/prometheus/index.xml"><img src="/img/feed-icon.svg" alt="RSS feed" /></a>
+            <a href="https://yunpass.cn/docker/jenkins/index.xml"><img src="/img/feed-icon.svg" alt="RSS feed" /></a>
         </div>
     </nav>
 <div class="container-fluid">
@@ -240,7 +240,7 @@
           <a class="nav-link p-0" href="/docker/grafana.html"><h6>安装grafana</h6></a>
         
     </li>
-    <li data-nav-id="/docker/prometheus.html" class="nav-item my-1 active
+    <li data-nav-id="/docker/prometheus.html" class="nav-item my-1
         ">
         
         
@@ -303,7 +303,7 @@
           <a class="nav-link p-0" href="/docker/mongo.html"><h6>安装mongo</h6></a>
         
     </li>
-    <li data-nav-id="/docker/jenkins.html" class="nav-item my-1
+    <li data-nav-id="/docker/jenkins.html" class="nav-item my-1 active
         ">
         
         
@@ -330,9 +330,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#已创建docker-net">已创建docker-net</a></li>
+        <li><a href="#宿主机需安装及路径">宿主机需安装及路径</a></li>
+        <li><a href="#已创建docker-net网络">已创建docker-net网络</a></li>
         <li><a href="#docker-composeyml">docker-compose.yml</a></li>
-        <li><a href="#prometheusyml">prometheus.yml</a></li>
       </ul>
     </li>
   </ul>
@@ -343,7 +343,7 @@
                 
 
 <div class="d-flex flex-column">
-    <h1 class="js-title">安装prometheus</h1>
+    <h1 class="js-title">安装jenkins</h1>
     <div class="d-flex align-items-center">
         
     </div>
@@ -352,7 +352,14 @@
 <hr>
 
 
-<h3 id="已创建docker-net">已创建docker-net</h3>
+<h3 id="宿主机需安装及路径">宿主机需安装及路径</h3>
+<ul>
+<li>docker: /usr/bin/docker</li>
+<li>docker-compose: /usr/local/bin/docker-compose</li>
+<li>java: /export/local/java</li>
+<li>maven: /export/local/maven</li>
+</ul>
+<h3 id="已创建docker-net网络">已创建docker-net网络</h3>
 <h3 id="docker-composeyml">docker-compose.yml</h3>
 
 
@@ -368,91 +375,36 @@
 
 <div class="position-relative">
     <div class="position-absolute" style="right:0;">
-        <button class="btn btn-light" data-clipboard-target="#clipboard_8f7e21feb7">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_8278b60c2f">
         Copy
         </button>
     </div>
-    <div id="clipboard_8f7e21feb7">
+    <div id="clipboard_8278b60c2f">
     <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
-version: &#34;3&#34;
+version: &#39;3&#39;
 services:
-  prometheus:
-    image: &#34;bitnami/prometheus:2.44.0&#34;
-    container_name: &#34;docker-prometheus&#34;
-    restart: &#34;always&#34;
+  jenkins:
+    image: &#39;jenkins/jenkins:lts-jdk8&#39;
+    container_name: jenkins
+    restart: always
     environment:
-      - &#34;TZ=Asia/Shanghai&#34;
+      - TZ=Asia/Shanghai
     ports:
-      - &#34;9090:9090&#34;
+      - &#39;8080:8080&#39;
     volumes:
-      - &#34;./prometheus.yml:/etc/prometheus/prometheus.yml&#34;
+      - &#39;/export/jenkins_home:/var/jenkins_home&#39;
+      - &#39;/export/local/java/jdk1.8:/usr/java/jdk1.8&#39;
+      - &#39;/export/local/maven:/usr/local/maven&#39;
+      - &#39;/var/run/docker.sock:/var/run/docker.sock&#39;
+      - &#39;/usr/bin/docker:/usr/bin/docker&#39;
+      - &#39;/usr/local/bin/docker-compose:/usr/local/bin/docker-compose&#39;
+
     networks:
       - docker-net
 
 networks:
   docker-net:
     external: true
-</code></pre>
-    </div>
-</div>
-
-
-
-
-<h3 id="prometheusyml">prometheus.yml</h3>
-
-
-
-
-
-
-    
-    
-
-
-
-
-<div class="position-relative">
-    <div class="position-absolute" style="right:0;">
-        <button class="btn btn-light" data-clipboard-target="#clipboard_866c00f5ab">
-        Copy
-        </button>
-    </div>
-    <div id="clipboard_866c00f5ab">
-    <pre tabindex="0"><code class="language-<nil>" data-lang="<nil>">
-# my global config
-global:
-  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
-  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
-  # scrape_timeout is set to the global default (10s).
-
-# Alertmanager configuration
-alerting:
-  alertmanagers:
-  - static_configs:
-    - targets:
-      # - alertmanager:9093
-
-# Load rules once and periodically evaluate them according to the global &#39;evaluation_interval&#39;.
-rule_files:
-  # - &#34;first_rules.yml&#34;
-  # - &#34;second_rules.yml&#34;
-
-# A scrape configuration containing exactly one endpoint to scrape:
-# Here it&#39;s Prometheus itself.
-scrape_configs:
-  # The job name is added as a label `job=&lt;job_name&gt;` to any timeseries scraped from this config.
-  - job_name: &#39;prometheus&#39;
-
-    # metrics_path defaults to &#39;/metrics&#39;
-    # scheme defaults to &#39;http&#39;.
-
-    static_configs:
-     - targets: [&#39;192.168.0.1:9090&#39;]
-
-  - job_name: &#39;192.168.0.1&#39;
-    static_configs:
-     - targets: [&#39;192.168.0.1:9100&#39;]
 </code></pre>
     </div>
 </div>
@@ -471,8 +423,8 @@ scrape_configs:
 
     <h4 class="text-white text-center">Read more</h4>
 
-    <div class="d-flex justify-content-center"><a class="p-1 mr-3 d-inline-block text-white" href="/docker/grafana.html" title="安装grafana"><i class="fas fa-chevron-left p-1"></i>安装grafana</a>
-        <a class="p-1 ml-3 d-inline-block text-white text-right" href="/docker/promtail.html" title="安装promtail">安装promtail<i class="fas fa-chevron-right p-1"></i></a>
+    <div class="d-flex justify-content-center"><a class="p-1 mr-3 d-inline-block text-white" href="/docker/mongo.html" title="安装mongo"><i class="fas fa-chevron-left p-1"></i>安装mongo</a>
+        <a class="p-1 ml-3 d-inline-block text-white text-right" href="/docker/docker-network-restart.html" title="重启docker网络">重启docker网络<i class="fas fa-chevron-right p-1"></i></a>
     </div>
 </div>
 
